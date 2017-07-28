@@ -51,6 +51,13 @@ public class JavaSQLOperation {
 	      Class.forName("org.sqlite.JDBC");
 	      _connection = DriverManager.getConnection(dbName);
 	      
+	      // Get database information
+          DatabaseMetaData dbMetaData = _connection.getMetaData();
+          System.out.println("Database product name: " + dbMetaData.getDatabaseProductName());
+          System.out.println("Database version : " + dbMetaData.getDatabaseMajorVersion() + " Product version: " + dbMetaData.getDatabaseProductVersion());
+          System.out.println("Database driver name : " + dbMetaData.getDriverName());
+          System.out.println("Database user name: " + dbMetaData.getUserName());
+	      
 	      _statement = _connection.createStatement();
 	      String sql = "CREATE TABLE COMPANY " +
 	                   "(ID INT PRIMARY KEY     NOT NULL," +

@@ -9,7 +9,7 @@ public class JavaMySQLOperation {
 	// 数据库的用户名与密码，需要根据自己的设置
 	static final String USER = "root";
 	static final String PASS = "123456";
-	
+	;
 	public static void main(String[] args) throws ClassNotFoundException
 	{
 		// mysql test		
@@ -31,6 +31,13 @@ public class JavaMySQLOperation {
 	            sql = "SELECT id, name, age, salary, address FROM employee";
 	            ResultSet rs = stmt.executeQuery(sql);
 	        
+	            // Get database information
+	            DatabaseMetaData dbMetaData = conn.getMetaData();
+	            System.out.println("Database product name: " + dbMetaData.getDatabaseProductName());
+	            System.out.println("Database version : " + dbMetaData.getDatabaseMajorVersion() + " Product version: " + dbMetaData.getDatabaseProductVersion());
+	            System.out.println("Database driver name : " + dbMetaData.getDriverName());
+	            System.out.println("Database user name: " + dbMetaData.getUserName());
+	            
 	            // 展开结果集数据库
 	            while(rs.next()){
 	                // 通过字段检索
