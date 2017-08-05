@@ -19,3 +19,10 @@ This repo is used to my java programming samples created by Eclipse.
 ## 4. JavaJsonOperation.java
    > * It shoud add the connector gson-2.8.1.jar to this Eclipse project.
    > * Read the json file and parse it.
+   
+## 5. JavaNetOperationClient.java & JavaNetOperationServer.java
+   > * This is a simple socket programming sample.
+   > * Client side access the server by create socket by specific server name and port.
+   > * Server accept the access from client side by create server socket with the same port.
+   > * After establish the connection between server and client, then can send and receive messages each other.
+   > * About how to run in Eclipse simultaneously, please run server first and then run client. 
